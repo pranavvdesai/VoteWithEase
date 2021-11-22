@@ -12,7 +12,6 @@ const candidateRegistration = async(req,res) => {
         console.log('File'+req.file)
         var candidate = new Candidate({
             ...body,
-            image:req.file.location
         });
         await candidate.save();
         res.status(200).send({
